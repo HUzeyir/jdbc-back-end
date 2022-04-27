@@ -26,10 +26,15 @@ public class Main extends AbstractDao {
     public static void main(String[] args) {
        
 
-//        UserDaoInter udi = Context.instanceUserDao();
+        UserDaoInter udi = Context.instanceUserDao();
 ////        User uByEmail=udi.serchUserByEmailAndPassword("ismayilos@gmail.com", "6035604isma");
 //         User u2=udi.getUserbyId(5);
 //         System.out.println(u2.getEmail());
+
+User user=new User("Test100", "Testov100", "test100@gmail.com", "1234", "this user created for test test100", getAge(1889, 5, 25), Timestamp.valueOf(LocalDateTime.now()), true);
+User user2=new User("Test101", "Testov101", "test101@gmail.com", "12345", "this user created for test101", getAge(1889, 5, 25), Timestamp.valueOf(LocalDateTime.now()), true);
+udi.addUser(user2);
+
     }
 
     public static List<Skill> getSkils() {

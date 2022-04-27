@@ -40,7 +40,8 @@ public class UserDaoImpl extends AbstractDao implements UserDaoInter {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSur_name());
             stmt.setString(3, u.getEmail());
-            stmt.setString(4, hasher.hashToString(4, u.getPassword().toCharArray()));
+            String pass=hasher.hashToString(4, u.getPassword().toCharArray());
+            stmt.setString(4, pass);
             stmt.setString(5, u.getAbout());
             stmt.setDate(6, u.getAge());
             stmt.setTimestamp(7, u.getAddDate());
