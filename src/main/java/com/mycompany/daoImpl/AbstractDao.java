@@ -18,17 +18,19 @@ public abstract class AbstractDao {
         Connection con = null;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         }
         try {
 
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbctest", "root", "1234");
-            System.out.println("Connected");
+            System.out.println("Connected to DataBase");
             return con;
         } catch (SQLException ex) {
-            System.out.println("poor connection: " + ex.getMessage());
+
+            System.out.println("cant connect with DataBase " + ex.getMessage());
+            ex.printStackTrace();
         }
 
         return con;
