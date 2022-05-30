@@ -110,7 +110,7 @@ public class UserDaoImpl extends AbstractDao implements UserDaoInter {
     public User getUserbyId(int id) {
 
         String sql = "select u.user_id, u.user_name, u.sur_name, u.email, u.user_password, u.about, u.age, u.add_date, u.update_date, u.is_online, "
-                + "us.power, s.skills_name, a.city, a.town, a.street, n.birth_place, n.country, p.phones, l.links  from user u "
+                + "s.power, s.skills_name, a.city, a.town, a.street, n.birth_place, n.country, p.phones, l.links  from user u "
                 + "left join user_skill us on u.user_id=us.user_id left join skill s on us.skill_id=s.skill_id "
                 + "left join user_address ua on u.user_id=ua.user_id left join address a on ua.address_id=a.address_id "
                 + "left join nationality n on u.user_id=n.user_id left join private_information pin on u.pi_info_id=pin.pi_id "
